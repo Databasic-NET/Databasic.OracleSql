@@ -93,7 +93,7 @@
     <None Include="content\App.config.uninstall.xdt" />
     <None Include="content\Web.config.install.xdt" />
     <None Include="content\Web.config.uninstall.xdt" />
-    <None Include="Databasic.Oracle.nuspec" />
+    <None Include="Databasic.OracleSql.nuspec" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

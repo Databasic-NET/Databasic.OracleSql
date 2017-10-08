@@ -8,13 +8,13 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("Databasic.Oracle")>
+<Assembly: AssemblyTitle("Databasic.OracleSql")>
 <Assembly: AssemblyDescription("Databasic - C#/VB.NET database utility
  - focusing on queries primarily based on pure SQL commands, no linq transations
  - arranging data into primitive types, typed active record classes, collections and more
  - allowing to run any nonselect queries")>
-<Assembly: AssemblyCompany("")> 
-<Assembly: AssemblyProduct("Databasic.Oracle")> 
+<Assembly: AssemblyCompany("")>
+<Assembly: AssemblyProduct("Databasic.OracleSql")>
 <Assembly: AssemblyCopyright("Copyright ©  2017")>
 <Assembly: AssemblyTrademark("Tom Flidr")>
 
@@ -25,10 +25,10 @@ Imports System.Runtime.InteropServices
 
 ' Version information for an assembly consists of the following four values:
 '
-'      Major Version
-'      Minor Version 
-'      Build Number
-'      Revision
+'   Major Version
+'   Minor Version 
+'   Build Number
+'   Revision
 '
 ' You can specify all the values or you can default the Build and Revision Numbers 
 ' by using the '*' as shown below:

@@ -76,9 +76,9 @@ Public Class Statement
             For Each prop As PropertyDescriptor In TypeDescriptor.GetProperties(sqlParams)
                 sqlParamValue = prop.GetValue(sqlParams)
                 Me._cmd.Parameters.Add(
-                        prop.Name,
-                        If((sqlParamValue Is Nothing), DBNull.Value, sqlParamValue)
-                    )
+                    prop.Name,
+                    If((sqlParamValue Is Nothing), DBNull.Value, sqlParamValue)
+                )
             Next
         End If
     End Sub
@@ -90,9 +90,9 @@ Public Class Statement
         If (Not sqlParams Is Nothing) Then
             For Each pair As KeyValuePair(Of String, Object) In sqlParams
                 Me._cmd.Parameters.Add(
-                        pair.Key,
-                        If((pair.Value Is Nothing), DBNull.Value, pair.Value)
-                    )
+                    pair.Key,
+                    If((pair.Value Is Nothing), DBNull.Value, pair.Value)
+                )
             Next
         End If
     End Sub

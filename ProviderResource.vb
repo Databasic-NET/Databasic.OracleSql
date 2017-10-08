@@ -1,11 +1,11 @@
 ﻿Public Class ProviderResource
-	Inherits Databasic.ProviderResource
+    Inherits Databasic.ProviderResource
 
     ' TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO 
 
     Public Overrides Function GetTableColumns(table As String, connection As Databasic.Connection) As Dictionary(Of String, Boolean)
-		Dim result As New Dictionary(Of String, Boolean)
-		Dim rawData As Dictionary(Of String, String) = Databasic.Statement.Prepare("
+        Dim result As New Dictionary(Of String, Boolean)
+        Dim rawData As Dictionary(Of String, String) = Databasic.Statement.Prepare("
 				SELECT 
 					c.IS_NULLABLE,
 					c.COLUMN_NAME
@@ -17,21 +17,21 @@
 				ORDER BY 
 					c.ORDINAL_POSITION
 			", connection
-		).FetchAll(New With {
-			.database = connection.Provider.Database,
-			.table = table
-		}).ToDictionary(Of String, String)("COLUMN_NAME")
-		Dim columnCouldBenull As Boolean
-		For Each item In rawData
-			columnCouldBenull = item.Value.ToUpper().IndexOf("NO") = -1
-			result.Add(item.Key, columnCouldBenull)
-		Next
-		Return result
-	End Function
+        ).FetchAll(New With {
+            .database = connection.Provider.Database,
+            .table = table
+        }).ToDictionary(Of String, String)("COLUMN_NAME")
+        Dim columnCouldBenull As Boolean
+        For Each item In rawData
+            columnCouldBenull = item.Value.ToUpper().IndexOf("NO") = -1
+            result.Add(item.Key, columnCouldBenull)
+        Next
+        Return result
+    End Function
 
-	Public Overrides Function GetLastInsertedId(ByRef transaction As Databasic.Transaction, Optional ByRef classMetaDescription As MetaDescription = Nothing) As Object
-		Return Databasic.Statement.Prepare("SELECT LAST_INSERT_ID()", transaction).FetchOne().ToInstance(Of Object)()
-	End Function
+    Public Overrides Function GetLastInsertedId(ByRef transaction As Databasic.Transaction, Optional ByRef classMetaDescription As MetaDescription = Nothing) As Object
+        Return Databasic.Statement.Prepare("SELECT LAST_INSERT_ID()", transaction).FetchOne().ToInstance(Of Object)()
+    End Function
 
     'Public Overrides Function GetAll(
     '		connection As Databasic.Connection,
