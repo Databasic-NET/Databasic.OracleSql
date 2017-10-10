@@ -92,7 +92,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="content\App.config.install.xdt" />
     <None Include="content\App.config.uninstall.xdt" />
     <None Include="content\Web.config.install.xdt" />
