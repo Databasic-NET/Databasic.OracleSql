@@ -1,4 +1,4 @@
-﻿Imports System.Data.Common
+Imports System.Data.Common
 Imports Oracle.DataAccess.Client
 
 Public Class Connection
@@ -26,7 +26,7 @@ Public Class Connection
 	Protected Shared Sub errorHandler(sender As Object, args As OracleInfoMessageEventArgs)
 		Dim sqlErrors As Databasic.SqlErrorsCollection = New SqlErrorsCollection()
 		For index = 0 To args.Errors.Count - 1
-			sqlErrors.Add(New Databasic.Oracle.SqlError(args.Errors(index)))
+			sqlErrors.Add(New Databasic.OracleSql.SqlError(args.Errors(index)))
 		Next
 		Databasic.Events.RaiseError(sqlErrors)
 	End Sub
